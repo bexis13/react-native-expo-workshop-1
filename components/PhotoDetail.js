@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import Image from 'react-native-image-progress';
 import PhotoHeader from '../components/PhotoHeader';
 import PhotoFooter from '../components/PhotoFooter';
+import PhotoCommentBox from '../components/PhotoCommentBox';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class PhotoDetail extends React.Component {
       isLiked: !this.state.isLiked
     });
   }
-
+  handleNewComment() {}
   render() {
     return (
       <View style={styles.containerStyle}>
@@ -40,6 +41,7 @@ class PhotoDetail extends React.Component {
           likes={this.props.photo.likes}
           likePhoto={this.likePhoto}
         />
+        <PhotoCommentBox handleNewComment={this.handleNewComment} />
       </View>
     );
   }

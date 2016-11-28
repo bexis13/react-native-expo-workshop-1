@@ -1,10 +1,31 @@
 import React, { PropTypes } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native';
 import { Ionicons } from '@exponent/vector-icons';
 import Colors from '../constants/Colors';
 
 
 class PhotoFooter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleCommentPress = this.handleCommentPress.bind(this);
+    this.state = {
+      comments: [
+        '✨ React Native at rmotr.com ✨',
+        'Mobile dev 👾📲'
+      ]
+    };
+  }
+  handleCommentPress() {
+    const message = this.state.comments.join('\n');
+    Alert.alert(
+      'Comments',
+      message,
+      [
+        { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
+      ]
+    );
+  }
   render() {
     return (
       <View style={styles.footer}>
@@ -17,7 +38,7 @@ class PhotoFooter extends React.Component {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={this.handleCommentPress}>
             <Ionicons
               style={styles.footerIcon}
               name="ios-chatboxes-outline"
@@ -50,16 +71,15 @@ class PhotoFooter extends React.Component {
 }
 
 PhotoFooter.propTypes = {
-  likes: PropTypes.number.isRequired,
-  isLiked: PropTypes.bool.isRequired,
-  likePhoto: PropTypes.func.isRequired
+  likes: PropTypes.number.isRequired
 };
 
 const styles = StyleSheet.create({
   footer: {
     flexDirection: 'column',
     padding: 5,
-    paddingLeft: 7
+    paddingLeft: 7,
+    marginBottom: 10
   },
 
   footerTop: {
