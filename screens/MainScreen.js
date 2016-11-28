@@ -18,7 +18,7 @@ MainScreen.route = {
   navigationBar: {
     visible: true,
     title: 'Workshop - part 1',
-    backgroundColor: Colors.success,
+    backgroundColor: Colors.rmotrB,
     tintColor: '#FFF'
   }
 };
