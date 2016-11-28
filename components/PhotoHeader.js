@@ -4,37 +4,42 @@ import Image from 'react-native-image-progress';
 import { Ionicons } from '@exponent/vector-icons';
 import Colors from '../constants/Colors';
 
-const PhotoHeader = props => (
-  <View style={styles.header}>
-    <View style={styles.headerLeft}>
-      <Image
-        style={styles.headerImage}
-        source={{ uri: props.profile }}
-        alt="Profile pic"
-      />
+class PhotoHeader extends React.Component{
+  render() {
+    return (
+      <View style={styles.header}>
+        <View style={styles.headerLeft}>
+          <Image
+            style={styles.headerImage}
+            source={{ uri: this.props.profile }}
+            alt="Profile pic"
+          />
 
-      <View>
-        <Text style={styles.headerText}>
-          {props.name}
-        </Text>
+          <View>
+            <Text style={styles.headerText}>
+              {this.props.name}
+            </Text>
 
-        <Text style={styles.headerLocation}>
-          {props.location} &gt;
-        </Text>
+            <Text style={styles.headerLocation}>
+              {this.props.location} &gt;
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.headerRight}>
+          <TouchableOpacity>
+            <Ionicons
+              name="md-share"
+              size={24}
+              color={Colors.rmotrB}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    );
+  }
+}
 
-    <View style={styles.headerRight}>
-      <TouchableOpacity>
-        <Ionicons
-          name="ios-more"
-          size={24}
-          color={Colors.rmotrB}
-        />
-      </TouchableOpacity>
-    </View>
-  </View>
-);
 
 PhotoHeader.propTypes = {
   name: PropTypes.string.isRequired,

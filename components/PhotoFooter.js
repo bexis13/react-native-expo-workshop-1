@@ -1,24 +1,10 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@exponent/vector-icons';
-import { withNavigation } from '@exponent/ex-navigation';
-import Router from '../navigation/Router';
 import Colors from '../constants/Colors';
 
-@withNavigation
-// this could be a stateless function, but we can't define it
-// like that becouse @withNavigation requires React.Component
+
 class PhotoFooter extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.goToComments = this.goToComments.bind(this);
-  }
-
-  goToComments() {
-    this.props.navigator.push(Router.getRoute('photoComments'));
-  }
-
   render() {
     return (
       <View style={styles.footer}>
@@ -26,9 +12,8 @@ class PhotoFooter extends React.Component {
           <TouchableOpacity>
             <Ionicons
               style={styles.footerIcon}
-              name={this.props.isLiked ? 'ios-heart' : 'ios-heart-outline'}
-              color={this.props.isLiked ? Colors.danger : '#555'}
-              onPress={this.props.likePhoto}
+              name="ios-heart-outline"
+              color="#555"
             />
           </TouchableOpacity>
 
@@ -37,7 +22,6 @@ class PhotoFooter extends React.Component {
               style={styles.footerIcon}
               name="ios-chatboxes-outline"
               color="#555"
-              onPress={this.goToComments}
             />
           </TouchableOpacity>
         </View>
@@ -50,8 +34,8 @@ class PhotoFooter extends React.Component {
           />
 
           <Text style={styles.footerText}>
-            {this.props.isLiked ? this.props.likes + 1 : this.props.likes}
-            {this.props.likes === 1 || (this.props.likes === 0 && this.props.isLiked) ? ' Like' : ' Likes'}
+            {this.props.likes}
+            {this.props.likes === 1 ? ' Like' : ' Likes'}
           </Text>
         </View>
 
@@ -68,8 +52,7 @@ class PhotoFooter extends React.Component {
 PhotoFooter.propTypes = {
   likes: PropTypes.number.isRequired,
   isLiked: PropTypes.bool.isRequired,
-  likePhoto: PropTypes.func.isRequired,
-  navigator: PropTypes.array
+  likePhoto: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
