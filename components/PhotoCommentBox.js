@@ -7,6 +7,15 @@ import Button from 'react-native-button';
 
 
 class PhotoCommentBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.saveComment = this.saveComment.bind(this);
+  }
+  saveComment() {
+    if (this.props.commentText) {
+      this.props.handleCommentSavePress()
+    }
+  }
   render() {
     return (
       <View>
@@ -14,15 +23,15 @@ class PhotoCommentBox extends React.Component {
           <TextInput
             style={styles.commentInput}
             placeholder="Add a comment..."
+            value={this.props.commentText}
+            onChangeText={this.props.handleCommentTextChange}
             autoCorrect={false}
           />
           <TouchableOpacity
             style={styles.commentText}
             onPress={this.saveComment}
           >
-            <Text style={styles.text}>
-               Post
-             </Text>
+            <Text style={this.props.commentText ? styles.text : styles.textOff}>Post</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -32,7 +41,9 @@ class PhotoCommentBox extends React.Component {
 
 
 PhotoCommentBox.propTypes = {
-  handleNewComment: PropTypes.func.isRequired
+  commentText: PropTypes.string.isRequired,
+  handleCommentSavePress: PropTypes.func.isRequired,
+  handleCommentTextChange: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({

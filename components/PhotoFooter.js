@@ -11,16 +11,12 @@ class PhotoFooter extends React.Component {
     this.handleCommentPress = this.handleCommentPress.bind(this);
     this.handlePhotoDate = this.handlePhotoDate.bind(this);
     this.state = {
-      comments: [
-        '✨ React Native at rmotr.com ✨',
-        'Mobile dev 👾📲'
-      ],
       photoDate: moment().subtract(15, 'hours'),
       photoDisplay: 'fromNow'
     };
   }
   handleCommentPress() {
-    const message = this.state.comments.join('\n');
+    const message = this.props.comments.join('\n');
     Alert.alert(
       'Comments',
       message,
@@ -84,6 +80,7 @@ class PhotoFooter extends React.Component {
 }
 
 PhotoFooter.propTypes = {
+  comments: PropTypes.array.isRequired,
   likes: PropTypes.number.isRequired,
   isLiked: PropTypes.bool.isRequired,
   handleLikePhoto: PropTypes.func.isRequired
