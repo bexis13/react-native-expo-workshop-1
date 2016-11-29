@@ -27,14 +27,17 @@ class PhotoFooter extends React.Component {
     );
   }
   render() {
+    const likes = this.props.likes + (this.props.isLiked ? 1 : 0);
     return (
       <View style={styles.footer}>
         <View style={styles.footerTop}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={this.props.handleLikePhoto}
+          >
             <Ionicons
               style={styles.footerIcon}
-              name="ios-heart-outline"
-              color="#555"
+              name={this.props.isLiked ? 'ios-heart' : 'ios-heart-outline'}
+              color={this.props.isLiked ? Colors.danger : '#555'}
             />
           </TouchableOpacity>
 
@@ -55,8 +58,8 @@ class PhotoFooter extends React.Component {
           />
 
           <Text style={styles.footerText}>
-            {this.props.likes}
-            {this.props.likes === 1 ? ' Like' : ' Likes'}
+            {likes}
+            {likes === 1 ? ' Like' : ' Likes'}
           </Text>
         </View>
 
@@ -71,7 +74,9 @@ class PhotoFooter extends React.Component {
 }
 
 PhotoFooter.propTypes = {
-  likes: PropTypes.number.isRequired
+  likes: PropTypes.number.isRequired,
+  isLiked: PropTypes.bool.isRequired,
+  handleLikePhoto: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
