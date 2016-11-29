@@ -6,9 +6,12 @@ import photosData from '../data/photos.json';
 
 class MainScreen extends React.Component {
   render() {
+    const photos = photosData.map((photo, idx) => (
+      <PhotoDetail photo={photo} key={idx} />
+    ));
     return (
       <ScrollView style={styles.container}>
-        <PhotoDetail photo={photosData[0]} />
+        {photos}
       </ScrollView>
     );
   }
