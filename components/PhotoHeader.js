@@ -1,10 +1,18 @@
 import React, { PropTypes } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Share, StyleSheet } from 'react-native';
 import Image from 'react-native-image-progress';
 import { Ionicons } from '@exponent/vector-icons';
 import Colors from '../constants/Colors';
 
 class PhotoHeader extends React.Component{
+  openShareOptions() {
+    return Share.share({
+      url: 'https://rmotr.com',
+      title: 'Learn to code in a remote classroom',
+      message: 'Real teacher, real classmates, real assignments, but remote.',
+      dialogTitle: 'Learn to code in a remote classroom'
+    });
+  }
   render() {
     return (
       <View style={styles.header}>
@@ -27,7 +35,9 @@ class PhotoHeader extends React.Component{
         </View>
 
         <View style={styles.headerRight}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={this.openShareOptions}
+          >
             <Ionicons
               name="md-share"
               size={24}
