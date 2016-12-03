@@ -1,7 +1,9 @@
 # Workshop: Intro to React Native with Exponent - Project 1
 
 <p align='center'>
-  ![rmotr.com React Native Exponent Demo](https://media.giphy.com/media/l0Hlzh7zu2KyN4eiY/giphy.gif)
+  <img
+      src="https://media.giphy.com/media/l0Hlzh7zu2KyN4eiY/giphy.gif"
+      alt="rmotr.com React Native Exponent Demo" />
 </p>
 
 ## Assignments
