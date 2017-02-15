@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView, StatusBar, Platform, StyleSheet } from 'react-native';
 import Colors from '../constants/Colors';
 import PhotoDetail from '../components/PhotoDetail';
 import photosData from '../data/photos.json';
@@ -9,17 +9,21 @@ class MainScreen extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <PhotoDetail photo={photosData[0]} />
+
+        {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
+        {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
       </ScrollView>
     );
   }
 }
 
-MainScreen.route = {
-  navigationBar: {
-    visible: true,
-    title: 'Workshop - part 1',
-    backgroundColor: Colors.rmotrB,
-    tintColor: '#FFF'
+MainScreen.navigationOptions = {
+  title: 'Workshop - part 1',
+  header: {
+    tintColor: '#FFF',
+    style: {
+      backgroundColor: Colors.rmotrB
+    }
   }
 };
 
