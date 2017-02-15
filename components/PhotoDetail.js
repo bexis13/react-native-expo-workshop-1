@@ -9,9 +9,6 @@ class PhotoDetail extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleLikePhoto = this.handleLikePhoto.bind(this);
-    this.handleCommentTextChange = this.handleCommentTextChange.bind(this);
-    this.handleCommentSavePress = this.handleCommentSavePress.bind(this);
     this.state = {
       comments: [
         '✨ React Native at rmotr.com ✨',
@@ -20,6 +17,10 @@ class PhotoDetail extends React.Component {
       commentText: '',
       isLiked: false
     };
+
+    this.handleLikePhoto = this.handleLikePhoto.bind(this);
+    this.handleCommentTextChange = this.handleCommentTextChange.bind(this);
+    this.handleCommentSavePress = this.handleCommentSavePress.bind(this);
   }
 
   handleLikePhoto() {
@@ -27,15 +28,17 @@ class PhotoDetail extends React.Component {
       isLiked: !this.state.isLiked
     });
   }
+
   handleCommentSavePress() {
     const comments = this.state.comments;
     comments.push(this.state.commentText);
-    this.setState({ comments, commentText: '' })
+    this.setState({ comments, commentText: '' });
   }
-  handleCommentTextChange(text) {
-    this.setState({ commentText: text })
 
+  handleCommentTextChange(text) {
+    this.setState({ commentText: text });
   }
+
   render() {
     return (
       <View style={styles.containerStyle}>
@@ -59,6 +62,7 @@ class PhotoDetail extends React.Component {
           likes={this.props.photo.likes}
           handleLikePhoto={this.handleLikePhoto}
         />
+
         <PhotoCommentBox
           handleCommentSavePress={this.handleCommentSavePress}
           commentText={this.state.commentText}

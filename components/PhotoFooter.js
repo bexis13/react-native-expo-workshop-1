@@ -1,20 +1,22 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native';
 import { Ionicons } from '@exponent/vector-icons';
+import moment from 'moment';
 import Colors from '../constants/Colors';
-
-var moment = require('moment');
 
 class PhotoFooter extends React.Component {
   constructor(props) {
     super(props);
-    this.handleCommentPress = this.handleCommentPress.bind(this);
-    this.handlePhotoDate = this.handlePhotoDate.bind(this);
+
     this.state = {
       photoDate: moment().subtract(15, 'hours'),
       photoDisplay: 'fromNow'
     };
+
+    this.handleCommentPress = this.handleCommentPress.bind(this);
+    this.handlePhotoDate = this.handlePhotoDate.bind(this);
   }
+
   handleCommentPress() {
     const message = this.props.comments.join('\n');
     Alert.alert(
@@ -22,18 +24,21 @@ class PhotoFooter extends React.Component {
       message,
       [
         { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
-        { text: 'OK', onPress: () => console.log('OK Pressed') },
+        { text: 'OK', onPress: () => console.log('OK Pressed') }
       ]
     );
   }
+
   handlePhotoDate() {
     this.setState({
       photoDisplay: (this.state.photoDisplay === 'fromNow' ? 'format' : 'fromNow')
     });
   }
+
   render() {
     const likes = this.props.likes + (this.props.isLiked ? 1 : 0);
-    const photoDate = this.state.photoDate[this.state.photoDisplay]()
+    const photoDate = this.state.photoDate[this.state.photoDisplay]();
+
     return (
       <View style={styles.footer}>
         <View style={styles.footerTop}>

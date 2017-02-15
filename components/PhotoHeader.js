@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
-import { View, Text, TouchableOpacity, Share, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity,
+         Share, StyleSheet } from 'react-native';
 import Image from 'react-native-image-progress';
 import { Ionicons } from '@exponent/vector-icons';
 import Colors from '../constants/Colors';
 
-class PhotoHeader extends React.Component{
+class PhotoHeader extends React.Component {
   openShareOptions() {
     return Share.share({
       url: 'https://rmotr.com',
@@ -13,6 +14,7 @@ class PhotoHeader extends React.Component{
       dialogTitle: 'Learn to code in a remote classroom'
     });
   }
+
   render() {
     return (
       <View style={styles.header}>
@@ -49,7 +51,6 @@ class PhotoHeader extends React.Component{
     );
   }
 }
-
 
 PhotoHeader.propTypes = {
   name: PropTypes.string.isRequired,
