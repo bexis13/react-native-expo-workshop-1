@@ -1,20 +1,26 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native';
 import { Ionicons } from '@exponent/vector-icons';
+import moment from 'moment';
 import Colors from '../constants/Colors';
-
 
 class PhotoFooter extends React.Component {
   constructor(props) {
     super(props);
-    this.handleCommentPress = this.handleCommentPress.bind(this);
+
     this.state = {
       comments: [
         '✨ React Native at rmotr.com ✨',
         'Mobile dev 👾📲'
-      ]
+      ],
+      photoDate: moment().subtract(15, 'hours'),
+      photoDisplay: 'fromNow'
     };
+
+    this.handleCommentPress = this.handleCommentPress.bind(this);
+    this.handlePhotoDate = this.handlePhotoDate.bind(this);
   }
+
   handleCommentPress() {
     const message = this.state.comments.join('\n');
     Alert.alert(
@@ -22,12 +28,21 @@ class PhotoFooter extends React.Component {
       message,
       [
         { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
-        { text: 'OK', onPress: () => console.log('OK Pressed') },
+        { text: 'OK', onPress: () => console.log('OK Pressed') }
       ]
     );
   }
+
+  handlePhotoDate() {
+    this.setState({
+      photoDisplay: (this.state.photoDisplay === 'fromNow' ? 'format' : 'fromNow')
+    });
+  }
+
   render() {
+    const photoDate = this.state.photoDate[this.state.photoDisplay]();
     const likes = this.props.likes + (this.props.isLiked ? 1 : 0);
+
     return (
       <View style={styles.footer}>
         <View style={styles.footerTop}>
@@ -64,8 +79,8 @@ class PhotoFooter extends React.Component {
         </View>
 
         <View>
-          <Text style={styles.footerHour}>
-            {'15 hours ago'.toUpperCase()}
+          <Text style={styles.footerHour} onPress={this.handlePhotoDate}>
+            {photoDate.toUpperCase()}
           </Text>
         </View>
       </View>
