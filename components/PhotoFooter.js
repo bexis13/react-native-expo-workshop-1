@@ -40,8 +40,8 @@ class PhotoFooter extends React.Component {
   }
 
   render() {
-    const likes = this.props.likes + (this.props.isLiked ? 1 : 0);
     const photoDate = this.state.photoDate[this.state.photoDisplay]();
+
     return (
       <View style={styles.footer}>
         <View style={styles.footerTop}>
@@ -86,8 +86,7 @@ class PhotoFooter extends React.Component {
 }
 
 PhotoFooter.propTypes = {
-  likes: PropTypes.number.isRequired,
-  isLiked: PropTypes.bool.isRequired
+  likes: PropTypes.number.isRequired
 };
 
 const styles = StyleSheet.create({
