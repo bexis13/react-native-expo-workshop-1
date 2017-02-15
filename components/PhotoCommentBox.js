@@ -1,10 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
-
 import Colors from '../constants/Colors';
-
-import Button from 'react-native-button';
-
 
 class PhotoCommentBox extends React.Component {
   render() {
@@ -16,6 +12,7 @@ class PhotoCommentBox extends React.Component {
             placeholder="Add a comment..."
             autoCorrect={false}
           />
+
           <TouchableOpacity
             style={styles.commentText}
             onPress={this.saveComment}
@@ -29,7 +26,6 @@ class PhotoCommentBox extends React.Component {
     );
   }
 }
-
 
 PhotoCommentBox.propTypes = {
   handleNewComment: PropTypes.func.isRequired

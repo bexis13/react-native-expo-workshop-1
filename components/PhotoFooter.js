@@ -87,8 +87,7 @@ class PhotoFooter extends React.Component {
 
 PhotoFooter.propTypes = {
   likes: PropTypes.number.isRequired,
-  isLiked: PropTypes.bool.isRequired,
-  handleLikePhoto: PropTypes.func.isRequired
+  isLiked: PropTypes.bool.isRequired
 };
 
 const styles = StyleSheet.create({
