@@ -4,7 +4,7 @@ import Image from 'react-native-image-progress';
 import { Ionicons } from '@exponent/vector-icons';
 import Colors from '../constants/Colors';
 
-class PhotoHeader extends React.Component{
+class PhotoHeader extends React.Component {
   render() {
     return (
       <View style={styles.header}>
@@ -39,7 +39,6 @@ class PhotoHeader extends React.Component{
     );
   }
 }
-
 
 PhotoHeader.propTypes = {
   name: PropTypes.string.isRequired,

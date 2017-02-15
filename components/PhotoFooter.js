@@ -3,18 +3,20 @@ import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native';
 import { Ionicons } from '@exponent/vector-icons';
 import Colors from '../constants/Colors';
 
-
 class PhotoFooter extends React.Component {
   constructor(props) {
     super(props);
-    this.handleCommentPress = this.handleCommentPress.bind(this);
+
     this.state = {
       comments: [
         '✨ React Native at rmotr.com ✨',
         'Mobile dev 👾📲'
       ]
     };
+
+    this.handleCommentPress = this.handleCommentPress.bind(this);
   }
+
   handleCommentPress() {
     const message = this.state.comments.join('\n');
     Alert.alert(
@@ -22,10 +24,11 @@ class PhotoFooter extends React.Component {
       message,
       [
         { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
-        { text: 'OK', onPress: () => console.log('OK Pressed') },
+        { text: 'OK', onPress: () => console.log('OK Pressed') }
       ]
     );
   }
+
   render() {
     return (
       <View style={styles.footer}>
