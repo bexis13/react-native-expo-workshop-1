@@ -12,6 +12,14 @@ class PhotoDetail extends React.Component {
     this.state = {
       isLiked: false
     };
+
+    this.handleLikePhoto = this.handleLikePhoto.bind(this);
+  }
+
+  handleLikePhoto() {
+    this.setState({
+      isLiked: !this.state.isLiked
+    });
   }
 
   handleNewComment() {}
@@ -36,6 +44,7 @@ class PhotoDetail extends React.Component {
         <PhotoFooter
           isLiked={this.state.isLiked}
           likes={this.props.photo.likes}
+          handleLikePhoto={this.handleLikePhoto}
         />
 
         <PhotoCommentBox handleNewComment={this.handleNewComment} />
