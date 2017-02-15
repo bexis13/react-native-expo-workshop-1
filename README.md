@@ -1,5 +1,7 @@
 # Workshop: Intro to React Native with Exponent - Project 1
 
+https://exp.host/@test123/exponent-react-native-workshop-1
+
 <p align='center'>
   <img
       src="https://media.giphy.com/media/l0Hlzh7zu2KyN4eiY/giphy.gif"
