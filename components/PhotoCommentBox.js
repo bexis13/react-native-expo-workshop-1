@@ -1,21 +1,20 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
-
 import Colors from '../constants/Colors';
-
-import Button from 'react-native-button';
-
 
 class PhotoCommentBox extends React.Component {
   constructor(props) {
     super(props);
+
     this.saveComment = this.saveComment.bind(this);
   }
+
   saveComment() {
     if (this.props.commentText) {
-      this.props.handleCommentSavePress()
+      this.props.handleCommentSavePress();
     }
   }
+
   render() {
     return (
       <View>
@@ -27,6 +26,7 @@ class PhotoCommentBox extends React.Component {
             onChangeText={this.props.handleCommentTextChange}
             autoCorrect={false}
           />
+
           <TouchableOpacity
             style={styles.commentText}
             onPress={this.saveComment}
@@ -39,11 +39,10 @@ class PhotoCommentBox extends React.Component {
   }
 }
 
-
 PhotoCommentBox.propTypes = {
   commentText: PropTypes.string.isRequired,
   handleCommentSavePress: PropTypes.func.isRequired,
-  handleCommentTextChange: PropTypes.func.isRequired,
+  handleCommentTextChange: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
