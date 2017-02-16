@@ -11,7 +11,7 @@ class MainScreen extends React.Component {
     super(props);
 
     this.state = {
-      refreshing: false
+      refreshing: false,
     };
 
     this.handlePhotoRefresh = this.handlePhotoRefresh.bind(this);
@@ -23,7 +23,7 @@ class MainScreen extends React.Component {
     setTimeout(() => {
       Alert.alert(
         'Photo Refresh Failed',
-        'No more photos in this version 😪'
+        'No more photos in this version 😪',
       );
       this.setState({ refreshing: false });
     }, 1000);
@@ -61,16 +61,16 @@ MainScreen.navigationOptions = {
   header: {
     tintColor: '#FFF',
     style: {
-      backgroundColor: Colors.rmotrB
-    }
-  }
+      backgroundColor: Colors.rmotrB,
+    },
+  },
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EEE'
-  }
+    backgroundColor: '#EEE',
+  },
 });
 
 export default MainScreen;
