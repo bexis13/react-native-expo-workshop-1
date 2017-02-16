@@ -11,10 +11,10 @@ class PhotoFooter extends React.Component {
     this.state = {
       comments: [
         '✨ React Native at rmotr.com ✨',
-        'Mobile dev 👾📲'
+        'Mobile dev 👾📲',
       ],
       photoDate: moment().subtract(15, 'hours'),
-      photoDisplay: 'fromNow'
+      photoDisplay: 'fromNow',
     };
 
     this.handleCommentPress = this.handleCommentPress.bind(this);
@@ -28,14 +28,14 @@ class PhotoFooter extends React.Component {
       message,
       [
         { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
-        { text: 'OK', onPress: () => console.log('OK Pressed') }
-      ]
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
+      ],
     );
   }
 
   handlePhotoDate() {
     this.setState({
-      photoDisplay: (this.state.photoDisplay === 'fromNow' ? 'format' : 'fromNow')
+      photoDisplay: (this.state.photoDisplay === 'fromNow' ? 'format' : 'fromNow'),
     });
   }
 
@@ -91,7 +91,7 @@ class PhotoFooter extends React.Component {
 PhotoFooter.propTypes = {
   likes: PropTypes.number.isRequired,
   isLiked: PropTypes.bool.isRequired,
-  handleLikePhoto: PropTypes.func.isRequired
+  handleLikePhoto: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: 5,
     paddingLeft: 7,
-    marginBottom: 10
+    marginBottom: 10,
   },
 
   footerTop: {
@@ -107,18 +107,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 10,
     borderBottomWidth: 1,
-    borderColor: '#eee'
+    borderColor: '#eee',
   },
 
   footerIcon: {
     fontSize: 26,
     padding: 4,
-    paddingRight: 10
+    paddingRight: 10,
   },
 
   footerBottom: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
 
   },
 
@@ -126,15 +126,15 @@ const styles = StyleSheet.create({
     color: Colors.rmotrB,
     fontSize: 12,
     fontWeight: '700',
-    marginLeft: 5
+    marginLeft: 5,
   },
 
   footerHour: {
     color: '#bbb',
     fontSize: 9,
     fontWeight: '400',
-    paddingTop: 5
-  }
+    paddingTop: 5,
+  },
 });
 
 export default PhotoFooter;

@@ -22,16 +22,16 @@ MainScreen.navigationOptions = {
   header: {
     tintColor: '#FFF',
     style: {
-      backgroundColor: Colors.rmotrB
-    }
-  }
+      backgroundColor: Colors.rmotrB,
+    },
+  },
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EEE'
-  }
+    backgroundColor: '#EEE',
+  },
 });
 
 export default MainScreen;

@@ -10,7 +10,7 @@ class PhotoDetail extends React.Component {
     super(props);
 
     this.state = {
-      isLiked: false
+      isLiked: false,
     };
 
     this.handleLikePhoto = this.handleLikePhoto.bind(this);
@@ -18,7 +18,7 @@ class PhotoDetail extends React.Component {
 
   handleLikePhoto() {
     this.setState({
-      isLiked: !this.state.isLiked
+      isLiked: !this.state.isLiked,
     });
   }
 
@@ -54,7 +54,7 @@ class PhotoDetail extends React.Component {
 }
 
 PhotoDetail.propTypes = {
-  photo: PropTypes.object.isRequired
+  photo: PropTypes.object.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -71,17 +71,17 @@ const styles = StyleSheet.create({
     elevation: 1,
     marginLeft: 5,
     marginRight: 5,
-    marginTop: 10
+    marginTop: 10,
   },
 
   imageContainer: {
-    alignItems: 'stretch'
+    alignItems: 'stretch',
   },
 
   image: {
     flex: 1,
-    height: 400
-  }
+    height: 400,
+  },
 });
 
 export default PhotoDetail;
