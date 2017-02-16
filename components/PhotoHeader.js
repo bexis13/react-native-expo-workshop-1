@@ -43,7 +43,7 @@ class PhotoHeader extends React.Component {
 PhotoHeader.propTypes = {
   name: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  profile: PropTypes.string.isRequired
+  profile: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -51,12 +51,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 5
+    padding: 5,
   },
 
   headerLeft: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   headerImage: {
@@ -65,23 +65,23 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginRight: 10,
     borderWidth: 1,
-    borderColor: '#eee'
+    borderColor: '#eee',
   },
 
   headerText: {
     color: Colors.rmotrB,
     fontSize: 12,
-    fontWeight: '700'
+    fontWeight: '700',
   },
 
   headerLocation: {
     fontSize: 11,
-    fontWeight: '300'
+    fontWeight: '300',
   },
 
   headerRight: {
-    marginRight: 10
-  }
+    marginRight: 10,
+  },
 });
 
 export default PhotoHeader;
