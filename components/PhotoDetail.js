@@ -42,7 +42,7 @@ class PhotoDetail extends React.Component {
 }
 
 PhotoDetail.propTypes = {
-  photo: PropTypes.object.isRequired
+  photo: PropTypes.object.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -59,17 +59,17 @@ const styles = StyleSheet.create({
     elevation: 1,
     marginLeft: 5,
     marginRight: 5,
-    marginTop: 10
+    marginTop: 10,
   },
 
   imageContainer: {
-    alignItems: 'stretch'
+    alignItems: 'stretch',
   },
 
   image: {
     flex: 1,
-    height: 400
-  }
+    height: 400,
+  },
 });
 
 export default PhotoDetail;
