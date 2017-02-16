@@ -4,12 +4,12 @@ import MainScreen from '../screens/MainScreen';
 const MainStackNavigator = StackNavigator(
   {
     Main: {
-      screen: MainScreen
-    }
+      screen: MainScreen,
+    },
   },
   {
-    initialRouteName: 'Main'
-  }
+    initialRouteName: 'Main',
+  },
 );
 
 export default MainStackNavigator;
