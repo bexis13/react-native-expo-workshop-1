@@ -42,7 +42,7 @@ class PhotoCommentBox extends React.Component {
 PhotoCommentBox.propTypes = {
   commentText: PropTypes.string.isRequired,
   handleCommentSavePress: PropTypes.func.isRequired,
-  handleCommentTextChange: PropTypes.func.isRequired
+  handleCommentTextChange: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -52,33 +52,33 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'stretch',
     borderTopWidth: 1,
-    borderColor: '#eee'
+    borderColor: '#eee',
   },
 
   commentInput: {
     flex: 1,
     height: 40,
     fontSize: 13,
-    padding: 10
+    padding: 10,
   },
 
   commentText: {
     justifyContent: 'center',
-    padding: 10
+    padding: 10,
   },
 
   text: {
     color: Colors.primary,
     fontSize: 14,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
 
   textOff: {
     color: Colors.primary,
     fontSize: 14,
     fontWeight: 'bold',
-    opacity: 0.5
-  }
+    opacity: 0.5,
+  },
 });
 
 export default PhotoCommentBox;
