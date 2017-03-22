@@ -13,7 +13,6 @@ class PhotoFooter extends React.Component {
         '✨ React Native at rmotr.com ✨',
         'Mobile dev 👾📲',
       ],
-      photoDate: moment().subtract(15, 'hours'),
       photoDisplay: 'fromNow',
     };
 
@@ -40,7 +39,7 @@ class PhotoFooter extends React.Component {
   }
 
   render() {
-    const photoDate = this.state.photoDate[this.state.photoDisplay]();
+    const photoDate = moment(this.props.publishDate)[this.state.photoDisplay]();
 
     return (
       <View style={styles.footer}>
@@ -87,6 +86,7 @@ class PhotoFooter extends React.Component {
 
 PhotoFooter.propTypes = {
   likes: PropTypes.number.isRequired,
+  publishDate: PropTypes.string,
 };
 
 const styles = StyleSheet.create({

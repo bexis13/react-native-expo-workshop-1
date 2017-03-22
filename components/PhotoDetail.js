@@ -35,6 +35,7 @@ class PhotoDetail extends React.Component {
 
         <PhotoFooter
           likes={this.props.photo.likes}
+          publishDate={this.props.photo.publishDate}
         />
 
         <PhotoCommentBox handleNewComment={this.handleNewComment} />
