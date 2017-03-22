@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native';
-import { Ionicons } from '@exponent/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import moment from 'moment';
 import Colors from '../constants/Colors';
 
@@ -13,7 +13,6 @@ class PhotoFooter extends React.Component {
         '✨ React Native at rmotr.com ✨',
         'Mobile dev 👾📲',
       ],
-      photoDate: moment().subtract(15, 'hours'),
       photoDisplay: 'fromNow',
     };
 
@@ -40,7 +39,7 @@ class PhotoFooter extends React.Component {
   }
 
   render() {
-    const photoDate = this.state.photoDate[this.state.photoDisplay]();
+    const photoDate = moment(this.props.publishDate)[this.state.photoDisplay]();
     const likes = this.props.likes + (this.props.isLiked ? 1 : 0);
 
     return (
@@ -91,6 +90,7 @@ class PhotoFooter extends React.Component {
 PhotoFooter.propTypes = {
   likes: PropTypes.number.isRequired,
   isLiked: PropTypes.bool.isRequired,
+  publishDate: PropTypes.string,
   handleLikePhoto: PropTypes.func.isRequired,
 };
 

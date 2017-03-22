@@ -1,4 +1,4 @@
-import Exponent from 'exponent';
+import Expo from 'expo';
 import React from 'react';
 import { View, ScrollView, Platform,
          StatusBar, StyleSheet } from 'react-native';
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
   },
 });
 
-Exponent.registerRootComponent(AppContainer);
+Expo.registerRootComponent(AppContainer);

@@ -1,11 +1,11 @@
-# Workshop: Intro to React Native with Exponent - Project 1
+# Workshop: Intro to React Native with Expo - Project 1
 
-https://exp.host/@test123/exponent-react-native-workshop-1
+https://exp.host/@rmotr/react-native-expo-workshop-1
 
 <p align='center'>
   <img
       src="https://media.giphy.com/media/l0Hlzh7zu2KyN4eiY/giphy.gif"
-      alt="rmotr.com React Native Exponent Demo" />
+      alt="rmotr.com React Native Expo Demo" />
 </p>
 
 ## Assignments
