@@ -1,6 +1,6 @@
 # Workshop: Intro to React Native with Expo - Project 1
 
-https://exp.host/@test123/react-native-expo-workshop-1
+https://exp.host/@rmotr/react-native-expo-workshop-1
 
 <p align='center'>
   <img
