@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native';
-import { Ionicons } from '@exponent/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import moment from 'moment';
 import Colors from '../constants/Colors';
 
