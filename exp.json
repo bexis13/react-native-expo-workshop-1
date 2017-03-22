@@ -1,9 +1,9 @@
 {
-  "name": "Exponent React Native Workshop 1",
-  "description": "Exponent React Native Workshop 1",
-  "slug": "exponent-react-native-workshop-1",
+  "name": "React Native Expo Workshop 1",
+  "description": "React Native Expo Workshop 1",
+  "slug": "react-native-expo-workshop-1",
   "privacy": "public",
-  "sdkVersion": "14.0.0",
+  "sdkVersion": "15.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#3A4767",
@@ -22,7 +22,7 @@
   },
   "appKey": "main",
   "androidStatusBarColor": "#000000",
-  "androidHideExponentNotificationInShellApp": true,
+  "androidShowExponentNotificationInShellApp": false,
   "packagerOpts": {
     "assetExts": ["ttf", "mp4"]
   },

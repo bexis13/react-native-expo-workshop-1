@@ -60,6 +60,7 @@ class PhotoDetail extends React.Component {
           comments={this.state.comments}
           isLiked={this.state.isLiked}
           likes={this.props.photo.likes}
+          publishDate={this.props.photo.publishDate}
           handleLikePhoto={this.handleLikePhoto}
         />
 

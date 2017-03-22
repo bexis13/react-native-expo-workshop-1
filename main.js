@@ -1,4 +1,4 @@
-import Exponent from 'exponent';
+import Expo from 'expo';
 import React from 'react';
 import { View, ScrollView, Platform,
          StatusBar, RefreshControl, Alert,
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   },
 });
 
-Exponent.registerRootComponent(AppContainer);
+Expo.registerRootComponent(AppContainer);
