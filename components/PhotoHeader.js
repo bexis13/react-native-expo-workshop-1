@@ -1,10 +1,20 @@
 import React, { PropTypes } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity,
+         Share, StyleSheet } from 'react-native';
 import Image from 'react-native-image-progress';
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 
 class PhotoHeader extends React.Component {
+  openShareOptions() {
+    /*
+      YOUR ASSIGNMENT:
+      Write a function that when you tap on the top-right share icon
+      in each picture work open share options.
+      TIP: https://facebook.github.io/react-native/docs/share.html
+    */
+  }
+
   render() {
     return (
       <View style={styles.header}>
@@ -27,7 +37,9 @@ class PhotoHeader extends React.Component {
         </View>
 
         <View style={styles.headerRight}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={this.openShareOptions}
+          >
             <Ionicons
               name="md-share"
               size={24}

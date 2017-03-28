@@ -9,10 +9,41 @@ class PhotoDetail extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { isLiked: false };
+    this.state = {
+      isLiked: false,
+      comments: [
+        '✨ React Native at rmotr.com ✨',
+        'Mobile dev 👾📲',
+      ],
+      commentText: '',
+    };
+
+    this.handleLikePhoto = this.handleLikePhoto.bind(this);
+    this.handleCommentSavePress = this.handleCommentSavePress.bind(this);
+    this.handleCommentTextChange = this.handleCommentTextChange.bind(this);
   }
 
-  handleNewComment() {}
+  handleLikePhoto() {
+    /**
+      YOUR ASSIGNMENT:
+      Write a function that toggles _isLiked_ state.
+    */
+  }
+
+  handleCommentSavePress() {
+    /**
+      YOUR ASSIGNMENT:
+      Implement the functionality to add new comments.
+    */
+  }
+
+  handleCommentTextChange(text) {
+    /**
+      YOUR ASSIGNMENT:
+      Write a function that set this.state.commentText
+      with *text* value.
+    */
+  }
 
   render() {
     return (
@@ -34,8 +65,16 @@ class PhotoDetail extends React.Component {
         <PhotoFooter
           isLiked={this.state.isLiked}
           likes={this.props.photo.likes}
+          publishDate={this.props.photo.publishDate}
+          handleLikePhoto={this.handleLikePhoto}
+          comments={this.state.comments}
         />
-        <PhotoCommentBox handleNewComment={this.handleNewComment} />
+
+        <PhotoCommentBox
+          handleCommentSavePress={this.handleCommentSavePress}
+          commentText={this.state.commentText}
+          handleCommentTextChange={this.handleCommentTextChange}
+        />
       </View>
     );
   }

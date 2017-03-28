@@ -8,17 +8,15 @@ class PhotoFooter extends React.Component {
     super(props);
 
     this.state = {
-      comments: [
-        '✨ React Native at rmotr.com ✨',
-        'Mobile dev 👾📲',
-      ],
+      photoDisplay: 'fromNow',
     };
 
     this.handleCommentPress = this.handleCommentPress.bind(this);
+    this.handlePhotoDate = this.handlePhotoDate.bind(this);
   }
 
   handleCommentPress() {
-    const message = this.state.comments.join('\n');
+    const message = this.props.comments.join('\n');
     Alert.alert(
       'Comments',
       message,
@@ -29,10 +27,33 @@ class PhotoFooter extends React.Component {
     );
   }
 
+  handlePhotoDate() {
+    /**
+      YOUR ASSIGNMENT:
+      Write a function that toggles between ISO string publishDate
+      and human-format date, like "15 hours ago".
+      TIP: it should change this.state.photoDisplay
+    */
+  }
+
   render() {
+    const { publishDate, isLiked } = this.props;
+
+    /*
+      YOUR ASSIGNMENT:
+      When the user taps on the _heart icon_,
+      the number of likes should increase by 1.
+    */
+    const likes = this.props.likes;
+
     return (
       <View style={styles.footer}>
         <View style={styles.footerTop}>
+          {/*
+              YOUR ASSIGNMENT:
+              When the user taps on the _heart icon_,
+              it should turn filled red.
+          */}
           <TouchableOpacity>
             <Ionicons
               style={styles.footerIcon}
@@ -58,14 +79,14 @@ class PhotoFooter extends React.Component {
           />
 
           <Text style={styles.footerText}>
-            {this.props.likes}
-            {this.props.likes === 1 ? ' Like' : ' Likes'}
+            {likes}
+            {likes === 1 ? ' Like' : ' Likes'}
           </Text>
         </View>
 
         <View>
-          <Text style={styles.footerHour}>
-            {'15 hours ago'.toUpperCase()}
+          <Text style={styles.footerHour} onPress={() => {}}>
+            {publishDate.toUpperCase()}
           </Text>
         </View>
       </View>
@@ -75,6 +96,10 @@ class PhotoFooter extends React.Component {
 
 PhotoFooter.propTypes = {
   likes: PropTypes.number.isRequired,
+  isLiked: PropTypes.bool.isRequired,
+  publishDate: PropTypes.string.isRequired,
+  handleLikePhoto: PropTypes.func,
+  comments: PropTypes.array,
 };
 
 const styles = StyleSheet.create({
